@@ -1,0 +1,22 @@
+{
+  "name": "fraserreed/feature-flag",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Fraser Reed",
+      "email": "fraser.reed@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "FeatureFlag\\": "src/FeatureFlag",
+      "FeatureFlag\\Tests\\": "tests/"
+    }
+  }
+}
