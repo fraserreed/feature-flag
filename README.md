@@ -43,7 +43,7 @@ echo (int) $featureFlag->isEnabled( 'feature-four' ) . " should be true\n";
 echo (int) $featureFlag->isEnabled( 'feature-five' ) . " should be false\n";
 ```
 
-This can be extended an put in a view helper in most frameworks.
+This can be extended and put in a view helper in most frameworks.
 
 ## Tests
 
