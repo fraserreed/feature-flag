@@ -1,6 +1,10 @@
 {
   "name": "fraserreed/feature-flag",
+  "description":"Simple feature flag checking for PHP >=5.5",
+  "keywords":["feature flag"],
+  "homepage": "http://github.com/fraserreed/feature-flag",
   "type": "library",
+  "license":"MIT",
   "authors": [
     {
       "name": "Fraser Reed",
