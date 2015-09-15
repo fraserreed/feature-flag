@@ -5,7 +5,7 @@ Simple feature flag checking for PHP >=5.5.
 
 [![Build Status](https://travis-ci.org/fraserreed/feature-flag.svg?branch=master)](https://travis-ci.org/fraserreed/feature-flag)
 
-#### Installation
+## Installation
 
 Install this package in your application using [composer](http://composer.org).
 
@@ -14,7 +14,7 @@ In the require section, add the following dependency:
 "fraserreed/feature-flag": "~0.1"
 ```
 
-#### Usage
+## Usage
 
 Currently this library only support static, array based feature flags, ideally used in multi-environment deploys.
 
