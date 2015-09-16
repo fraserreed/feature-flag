@@ -9,7 +9,7 @@ $config = [
     'feature-four'  => 1
 ];
 
-$featureFlagFilter = new \FeatureFlag\Filter\DistributedIP( 75 );
+$featureFlagFilter = new \FeatureFlag\Filter\DistributedIp( 75 );
 
 $featureFlag = new \FeatureFlag\FeatureFlag( $featureFlagFilter );
 
