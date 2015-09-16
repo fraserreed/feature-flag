@@ -4,6 +4,8 @@ FeatureFlag
 Simple feature flag checking for PHP >=5.5.
 
 [![Build Status](https://travis-ci.org/fraserreed/feature-flag.svg?branch=master)](https://travis-ci.org/fraserreed/feature-flag)
+[![Coverage Status](https://coveralls.io/repos/fraserreed/feature-flag/badge.png?branch=master)](https://coveralls.io/r/fraserreed/feature-flag?branch=master)
+
 
 ## Installation
 
