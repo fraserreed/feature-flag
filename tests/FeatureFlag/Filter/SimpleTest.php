@@ -1,13 +1,13 @@
 <?php
 
-namespace FeatureFlag\Tests;
+namespace FeatureFlag\Tests\Filter;
 
 
 use FeatureFlag\FeatureFlag;
 use FeatureFlag\Filter\Simple;
 
 
-class FeatureFlagTest extends \PHPUnit_Framework_TestCase
+class SimpleTest extends \PHPUnit_Framework_TestCase
 {
     public function testIsEnabledSimpleFilterEmpty()
     {

@@ -33,11 +33,14 @@ class Simple implements IFilter
     }
 
     /**
-     * @param $feature
+     * Map is static, so $user value is ignored
+     *
+     * @param      $feature
+     * @param null $user
      *
      * @return bool
      */
-    public function isEnabled( $feature )
+    public function isEnabled( $feature, $user = null )
     {
         if( isset( $this->map[ $feature ] ) )
         {

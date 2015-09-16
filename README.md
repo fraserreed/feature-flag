@@ -11,12 +11,16 @@ Install this package in your application using [composer](http://composer.org).
 
 In the require section, add the following dependency:
 ```
-"fraserreed/feature-flag": "~0.1"
+"fraserreed/feature-flag": "~0.2"
 ```
 
 ## Usage
 
-Currently this library only support static, array based feature flags, ideally used in multi-environment deploys.
+Any of these approaches can be extended and put in a view helper in most frameworks.
+
+### Static Configuration
+
+For static, array based feature flags, ideally used in multi-environment deploys.
 
 First create the static filter:
 
@@ -43,7 +47,27 @@ echo (int) $featureFlag->isEnabled( 'feature-four' ) . " should be true\n";
 echo (int) $featureFlag->isEnabled( 'feature-five' ) . " should be false\n";
 ```
 
-This can be extended and put in a view helper in most frameworks.
+### Distributed IP Address Weighting
+
+For an expected distribution across the IPv4 spectrum, a weighted configuration can be used.
+
+First create the filter with the expected distribution factor.
+
+```
+//feature flag will be enabled 75% of the time
+$featureFlagFilter = new \FeatureFlag\Filter\DistributedIp( 75 );
+```
+
+Then assert that a feature is enabled or not:
+
+```
+$featureFlag = new \FeatureFlag\FeatureFlag( $featureFlagFilter );
+
+echo (int) $featureFlag->isEnabled( 'feature-one', '192.168.0.161' ) . " should be false\n";
+echo (int) $featureFlag->isEnabled( 'feature-one', '31.12.127.255' ) . " should be true\n";
+echo (int) $featureFlag->isEnabled( 'feature-one', '46.248.224.183' ) . " should be true\n";
+echo (int) $featureFlag->isEnabled( 'feature-one', '58.136.218.102' ) . " should be true\n";
+```
 
 ## Tests
 
