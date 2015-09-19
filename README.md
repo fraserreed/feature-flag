@@ -30,8 +30,8 @@ First create the static filter:
 $config = [
     'feature-one'   => true,
     'feature-two'   => false,
-    'feature-three' => 'yes',
-    'feature-four'  => 1
+    'feature-three' => true,
+    'feature-four'  => true
 ];
 
 $featureFlagFilter = new \FeatureFlag\Filter\Simple( $config );
@@ -46,12 +46,12 @@ echo (int) $featureFlag->isEnabled( 'feature-one' ) . " should be true\n";
 echo (int) $featureFlag->isEnabled( 'feature-two' ) . " should be false\n";
 echo (int) $featureFlag->isEnabled( 'feature-three' ) . " should be true\n";
 echo (int) $featureFlag->isEnabled( 'feature-four' ) . " should be true\n";
-echo (int) $featureFlag->isEnabled( 'feature-five' ) . " should be false\n";
+echo (int) $featureFlag->isEnabled( 'feature-five' ) . " should be false (doesn't exist)\n";
 ```
 
 ### Distributed IP Address Weighting
 
-For an expected distribution across the IPv4 spectrum, a weighted configuration can be used.
+For an expected distribution across the IPv4 spectrum, a weighted configuration can be used.  A `crc32` hash checksum is computed for the IP, modulo 100.
 
 First create the filter with the expected distribution factor.
 
